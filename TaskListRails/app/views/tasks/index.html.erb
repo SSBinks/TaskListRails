@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Shari's To -Do</title>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>Shari's To -Do</title>
+</head>
 <header>
   <h1>Stuff Shari Must Complete</h1>
 </header>
-  <body>
-    <ul>
-      <% @tasks.each do |a|%>
-      <p> <%=link_to("#{a.task_name}", task_path(a) )%> </p>
+<body>
+  <ul>
+    <% @tasks.each do |a|%>
+    <h3> <%=link_to("#{a.task_name}", task_path(a), :class => 'task-name' )%> </h3>
+    <h4> Complete Status</h4>
+    <p>
+      <% if a.is_complete == true %>
+      <% valid = "Complete"  %>
+      <strong><%= "#{valid}"%></strong>
+      <%else%>
+      <% invalid = "Incomplete"  %>
+      <strong><%= "#{invalid}"%></strong>
+      <%end%>
+    </p>
+    <h4><strong> Complete Date</strong></h4>
+    <p>
+      <%= "#{a.complete_date}"%>
+    </p>
 
-     <li><%= button_to "Edit Me!", task_edit_path(a), method: :get%>
+
+    <li><%= button_to "Edit Me!", task_edit_path(a), method: :get%>
 
       <%= button_to "Destroy ME!", task_destroy_path(a), method: :delete,
       data: {confirm: "Are you sure?"}%>
       <%= button_to "Complete!", task_complete_path(a), method: :patch%> </li>
-
 
       <%end%>
 
@@ -27,4 +41,4 @@
     </p>
 
   </body>
-</html>
+  </html>

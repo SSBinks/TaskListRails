@@ -18,11 +18,16 @@
 
   <h4><strong> Complete Status</strong></h4>
   <p>
-     <%= "#{@task.is_complete}"%>
+    <% if @task.is_complete == true %>
+      <% valid = "Complete"  %>
+     <%= "#{valid}"%>
+     <%else%>
+       <% invalid = "Incomplete"  %>
+       <%= "#{invalid}"%>
+       <%end%>
   </p>
     <h4><strong> Complete Date</strong></h4>
   <p>
-  
      <%= "#{@task.complete_date}"%>
   </p>
 

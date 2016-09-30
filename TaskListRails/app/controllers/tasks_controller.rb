@@ -11,10 +11,9 @@ class TasksController < ApplicationController
   end
   def create
     @task = Task.new(task_params)
-    if @task.is_complete == nil ||  @task.is_complete == false
-      @task.update(complete_date:  nil)
-    end
+
     if @task.save
+    date_reset
       redirect_to tasks_path
     else
       render :new
@@ -23,12 +22,11 @@ class TasksController < ApplicationController
   def edit
     @task = Task.find(params[:id])
   end
+
   def update
     @task = Task.find(params[:id])
-    if @task.is_complete == nil ||  @task.is_complete == false
-      @task.update(complete_date: nil)
-    end
     if @task.update(task_params)
+    date_reset
       redirect_to tasks_path
     else
       render :edit
@@ -55,7 +53,9 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:task_name, :description, :is_complete, :complete_date)
   end
-  def update_complete_status_params
-    params.require(:task).permit( :is_complete)
+  def date_reset
+    if @task.is_complete == nil ||  @task.is_complete == false
+      @task.update(complete_date: nil)
+    end
   end
 end

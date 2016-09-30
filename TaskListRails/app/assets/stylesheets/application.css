@@ -16,12 +16,26 @@
  header{
    display: block;
   text-align: center;
+  font-family: fantasy;
+
+ }
+ h1{
+     border: 2px dashed black;
+     padding: 2vh;
  }
 ul li {
   list-style-type: none;
   font-size: 3vmin;
 }
-link_to:link{
+.task-name, .task-name:hover{
   text-decoration: none;
-
+  font-family: fantasy;
+  color: black;
+  border: 2px dashed black;
+}
+h3 {
+  margin-bottom: 1px;
+}
+h4 {
+  margin: 2px;
 }

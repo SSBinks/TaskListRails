@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Task for the Day</title>
+</head>
+<header>
+  <h1>Shari  specific Tasks</h1>
+</header>
+<body>
+    <%=link_to "Take Me Home!", tasks_path%>
+    <%= link_to "Edit Me!", task_edit_path%>
+    <%= link_to "Destroy ME!", task_destroy_path, method: :delete,
+    data: {confirm: "Are you sure?"}%> </li>
+  <h2> <%="#{@task.task_name}"%> </h2>
+
+  <p> <h4>A Brief Description: </h4>  <%="#{@task.description}" %> </p>
+
+  <h4><strong> Complete Status</strong></h4>
+  <p>
+     <%= "#{@task.is_complete}"%>
+  </p>
+    <h4><strong> Complete Date</strong></h4>
+  <p>
+  
+     <%= "#{@task.complete_date}"%>
+  </p>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Shari's To -Do</title>
+  </head>
+<header>
+  <h1>Stuff Shari Must Complete</h1>
+</header>
+  <body>
+    <ul>
+      <% @tasks.each do |a|%>
+      <p> <%=link_to("#{a.task_name}", task_path(a) )%> </p>
+
+     <li><%= button_to "Edit Me!", task_edit_path(a), method: :get%>
+
+      <%= button_to "Destroy ME!", task_destroy_path(a), method: :delete,
+      data: {confirm: "Are you sure?"}%>
+      <%= button_to "Complete!", task_complete_path(a), method: :patch%> </li>
+
+
+      <%end%>
+
+    </ul>
+    <p>
+      <%=link_to"Shari Has More stuff to do", tasks_new_path %>
+    </p>
+
+  </body>
+</html>

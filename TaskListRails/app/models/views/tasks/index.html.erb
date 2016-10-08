@@ -25,20 +25,14 @@
     <p>
       <%= "#{a.complete_date}"%>
     </p>
-
-
-    <li><%= button_to "Edit Me!", task_edit_path(a), method: :get%>
-
-      <%= button_to "Destroy ME!", task_destroy_path(a), method: :delete,
+    <li><%= button_to "Edit Me!", edit_task_path(a), method: :get%>
+      <%= button_to "Destroy ME!", task_path(a), method: :delete,
       data: {confirm: "Are you sure?"}%>
       <%= button_to "Complete!", task_complete_path(a), method: :patch%> </li>
-
       <%end%>
-
     </ul>
     <p>
-      <%=link_to"Shari Has More stuff to do", tasks_new_path %>
+      <%=link_to"Shari Has More stuff to do", new_task_path %>
     </p>
-
   </body>
   </html>

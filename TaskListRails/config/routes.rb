@@ -1,15 +1,8 @@
 Rails.application.routes.draw do
   root 'tasks#index'
-  get '/tasks' => 'tasks#index'
-  get 'tasks/new' => 'tasks#new'
-  post 'tasks' => 'tasks#create'
-  get 'tasks/:id', to: 'tasks#show', as: 'task'
-  get 'tasks/:id/edit', to: 'tasks#edit', as: 'task_edit'
-  patch 'tasks/:id' => 'tasks#update'
- # get 'tasks/:id/complete' => 'tasks#edit'
+  resources :tasks
   patch 'tasks/:id/complete' => 'tasks#complete', as: 'task_complete'
 
-  delete 'tasks/:id', to:'tasks#destroy', as: 'task_destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

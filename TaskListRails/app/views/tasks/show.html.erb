@@ -8,10 +8,17 @@
   <h1>Shari  specific Tasks</h1>
 </header>
 <body>
+
+  <nav id="nav">
+    <div id="page_nav">
+
   <%=link_to "Take Me Home!", tasks_path%>
   <%= link_to "Edit Me!", edit_task_path%>
   <%= link_to "Destroy ME!", task_path, method: :delete,
-  data: {confirm: "Are you sure?"}%> </li>
+  data: {confirm: "Are you sure?"}%>
+</div>
+    </nav>
+    <main>
   <h2> <%="#{@task.task_name}"%> </h2>
   <p> <h4>A Brief Description: </h4>  <%="#{@task.description}" %> </p>
   <h4><strong> Complete Status</strong></h4>
@@ -28,9 +35,6 @@
   <p>
     <%= "#{@task.complete_date}"%>
   </p>
-
-
-
-
+  </main>
 </body>
 </html>

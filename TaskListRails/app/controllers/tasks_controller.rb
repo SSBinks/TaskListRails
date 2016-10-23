@@ -1,11 +1,10 @@
 class TasksController < ApplicationController
+  before_action :find_student, only: [:show, :edit, :update]
   def index
     @tasks = Task.all
   end
 
-  def show
-    @task = Task.find(params[:id])
-  end
+  def show; end
 
   def new
     @task = Task.new
@@ -21,12 +20,9 @@ class TasksController < ApplicationController
     end
   end
 
-  def edit
-    @task = Task.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @task = Task.find(params[:id])
     if @task.update(task_params)
       date_reset
       redirect_to tasks_path
@@ -36,7 +32,6 @@ class TasksController < ApplicationController
   end
 
   def complete
-    @task = Task.find(params[:id])
     if @task.is_complete == nil || @task.is_complete == false
       @task.update(is_complete: true)
       @task.update(complete_date: Date.today)
@@ -52,6 +47,9 @@ class TasksController < ApplicationController
   end
 
   private
+  def find_task
+    @task = Task.find(params[:id])
+  end
 
   def task_params
     params.require(:task).permit(:task_name, :description, :is_complete, :complete_date)
@@ -62,5 +60,4 @@ class TasksController < ApplicationController
       @task.update(complete_date: nil)
     end
   end
-
 end

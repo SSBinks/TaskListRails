@@ -8,7 +8,6 @@
   <h1>Shari  specific Tasks</h1>
 </header>
 <body>
-
   <nav id="nav">
     <div id="page_nav">
 
@@ -20,7 +19,9 @@
   </nav>
   <main>
     <h3> <%="#{@task.task_name}"%> </h3>
-    <p> A Brief Description:  <%="#{@task.description}" %> </p>
+    <p>
+      <strong> A Brief Description:</strong>  <%="#{@task.description}" %>
+    </p>
     <p>
       <strong> Complete Status:</strong>
       <% if @task.is_complete == true %>
@@ -32,8 +33,13 @@
       <%end%>
     </p>
     <p>
+      <%if @task.complete_date != nil%>
       <strong> Complete Date</strong>
       <%= "#{@task.complete_date}"%>
+      <%end%>
+    </p>
+    <p>
+      <%= link_to "Complete This Task", task_complete_path, method: :patch%>
     </p>
   </main>
 </body>

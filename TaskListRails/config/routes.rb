@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'tasks#index'
   resources :tasks
   patch 'tasks/:id/complete' => 'tasks#complete', as: 'task_complete'
+  get "/auth/:provider/callback" =>  "sessions#create"
 
 
 

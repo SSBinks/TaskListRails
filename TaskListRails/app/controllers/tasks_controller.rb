@@ -40,7 +40,7 @@ class TasksController < ApplicationController
     if @task.is_complete == nil || @task.is_complete == false
       @task.update(is_complete: true)
       @task.update(complete_date: Date.today)
-      redirect_to task_path
+      redirect_to tasks_path
     else
       redirect_to task_path
     end

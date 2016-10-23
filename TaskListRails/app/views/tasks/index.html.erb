@@ -8,31 +8,40 @@
   <h1>Stuff Shari Must Complete</h1>
 </header>
 <body>
-  <ul>
-    <% @tasks.each do |a|%>
-    <h3> <%=link_to("#{a.task_name}", task_path(a), :class => 'task-name' )%> </h3>
-    <h4> Complete Status</h4>
+  <section>
+    <ul>
+      <% @tasks.each do |a|%>
+      <h3> <%=link_to("#{a.task_name}", task_path(a), :class => 'task-name' )%> </h3>
+      <p>
+        <strong>Complete Status:</strong>
+        <% if a.is_complete == true %>
+        <% valid = "Complete"  %>
+        <%= "#{valid}"%>
+        <%else%>
+        <% invalid = "Incomplete"  %>
+        <%= "#{invalid}"%>
+        <%end%>
+      </p>
+      <p>
+        <% if a.complete_date != nil%>
+        <strong> Complete Date:</strong>
+        <%= "#{a.complete_date}"%>
+        <%end%>
+      </p>
     <p>
-      <% if a.is_complete == true %>
-      <% valid = "Complete"  %>
-      <strong><%= "#{valid}"%></strong>
-      <%else%>
-      <% invalid = "Incomplete"  %>
-      <strong><%= "#{invalid}"%></strong>
-      <%end%>
-    </p>
-    <h4><strong> Complete Date</strong></h4>
+
+
+        <%= link_to "Edit!", edit_task_path(a), method: :get%>
+        <%= link_to "Destroy!", task_path(a), method: :delete,
+        data: {confirm: "Are you sure?"}%>
+        <%= link_to "Complete!", task_complete_path(a), method: :patch%>
+
+        <%end%>
+          </p>
+      </ul>
+    </section>
     <p>
-      <%= "#{a.complete_date}"%>
-    </p>
-    <li><%= button_to "Edit Me!", edit_task_path(a), method: :get%>
-      <%= button_to "Destroy ME!", task_path(a), method: :delete,
-      data: {confirm: "Are you sure?"}%>
-      <%= button_to "Complete!", task_complete_path(a), method: :patch%> </li>
-      <%end%>
-    </ul>
-    <p>
-      <%=link_to"Shari Has More stuff to do", new_task_path %>
+      <%=link_to"Add More Tasks", new_task_path %>
     </p>
   </body>
   </html>

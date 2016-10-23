@@ -29,13 +29,17 @@
  }
  .task-name, .task-name:hover{
    text-decoration: none;
-   font-family: fantasy;
+   font-family: monospace;
    color: black;
-   border: 2px dashed black;
+
  }
  h3 {
    margin-bottom: 1px;
  }
  h4 {
    margin: 2px;
+ }
+
+ p {
+   margin: 0;
  }

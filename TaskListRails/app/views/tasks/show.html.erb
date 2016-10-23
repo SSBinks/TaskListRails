@@ -12,29 +12,29 @@
   <nav id="nav">
     <div id="page_nav">
 
-  <%=link_to "Take Me Home!", tasks_path%>
-  <%= link_to "Edit Me!", edit_task_path%>
-  <%= link_to "Destroy ME!", task_path, method: :delete,
-  data: {confirm: "Are you sure?"}%>
-</div>
-    </nav>
-    <main>
-  <h2> <%="#{@task.task_name}"%> </h2>
-  <p> <h4>A Brief Description: </h4>  <%="#{@task.description}" %> </p>
-  <h4><strong> Complete Status</strong></h4>
-  <p>
-    <% if @task.is_complete == true %>
-    <% valid = "Complete"  %>
-    <%= "#{valid}"%>
-    <%else%>
-    <% invalid = "Incomplete"  %>
-    <%= "#{invalid}"%>
-    <%end%>
-  </p>
-  <h4><strong> Complete Date</strong></h4>
-  <p>
-    <%= "#{@task.complete_date}"%>
-  </p>
+      <%=link_to "Take Me Home!", tasks_path%>
+      <%= link_to "Edit Me!", edit_task_path%>
+      <%= link_to "Destroy ME!", task_path, method: :delete,
+      data: {confirm: "Are you sure?"}%>
+    </div>
+  </nav>
+  <main>
+    <h3> <%="#{@task.task_name}"%> </h3>
+    <p> A Brief Description:  <%="#{@task.description}" %> </p>
+    <p>
+      <strong> Complete Status:</strong>
+      <% if @task.is_complete == true %>
+      <% valid = "Complete"  %>
+      <%= "#{valid}"%>
+      <%else%>
+      <% invalid = "Incomplete"  %>
+      <%= "#{invalid}"%>
+      <%end%>
+    </p>
+    <p>
+      <strong> Complete Date</strong>
+      <%= "#{@task.complete_date}"%>
+    </p>
   </main>
 </body>
 </html>

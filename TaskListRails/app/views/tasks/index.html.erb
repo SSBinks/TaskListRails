@@ -9,6 +9,9 @@
 </header>
 <body>
   <section>
+    <nav>
+      <%= link_to "Log in with GitHub", "/auth/github" %>
+    </nav>
     <ul>
       <% @tasks.each do |a|%>
       <h3> <%=link_to("#{a.task_name}", task_path(a), :class => 'task-name' )%> </h3>

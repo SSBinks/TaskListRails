@@ -12,8 +12,11 @@
   </header>
   <nav id="nav">
     <div id="page_nav">
-      <%= "#{login_status }"%>
-      <%= link_to "Log in with Github!", "/auth/github" %>
+    <% if session[:uid] != nil%>
+    <%= link_to "Sign Out", logout_path, method: :delete %>
+    <% else %>
+    <%= link_to "Sign In", "/auth/github" %>
+    <%end%>
     </div>
   </nav>
   <%= yield %>

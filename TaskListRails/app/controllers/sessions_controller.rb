@@ -19,7 +19,8 @@ class SessionsController < ApplicationController
   end
 
   def logout
-      session.delete(:user_id)
+      session.delete(:uid)
+      redirect_to tasks_path
   end
 
 end

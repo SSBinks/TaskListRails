@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   def login_failure; end
 
   def login
-    redirect_to tasks_path;
+
   end
 
   def create
@@ -14,12 +14,12 @@ class SessionsController < ApplicationController
       @user = User.build_from_github(auth_hash)
       render :creation_failure unless @user.save
     end
-
+    session[:user_id] = @user.id
     redirect_to tasks_path
   end
 
   def logout
-      session.delete(:uid)
+      session.delete(:user_id)
       redirect_to tasks_path
   end
 

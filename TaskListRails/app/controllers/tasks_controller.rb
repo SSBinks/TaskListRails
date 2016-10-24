@@ -4,10 +4,11 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
+    @user = current_user
   end
 
   def show; end
-  
+
   def new
     @task = Task.new
   end

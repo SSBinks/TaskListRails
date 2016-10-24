@@ -1,13 +1,2 @@
-<h1> Something Else I gotta do</h1>
-<%= form_for @task do |f| %>
-<%= f.label :task_name %>
-<%= f.text_field :task_name %>
-<%= f.label :description %>
-<%= f.text_field :description %>
-<%= f.label :is_complete %>
-<%=f.check_box :is_complete %>
-<%= f.label :complete_date %>
-<%= f.date_select(:complete_date, order: [:day, :month, :year],
-:include_blank => true, :default => nil) %>
-<%= f.submit%>
-<% end %>
+<h2> Something Else I gotta do</h2>
+<%= render partial: "form" %>

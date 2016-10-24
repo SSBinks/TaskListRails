@@ -1,10 +1,9 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_login, only:[:login, :create]
 
   def login_failure; end
 
-  def login
-
-  end
+  def login; end
 
   def create
     auth_hash = request.env['omniauth.auth']
@@ -15,6 +14,7 @@ class SessionsController < ApplicationController
       render :creation_failure unless @user.save
     end
     session[:user_id] = @user.id
+
     redirect_to tasks_path
   end
 

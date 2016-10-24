@@ -15,9 +15,9 @@ class SessionsController < ApplicationController
       render :creation_failure unless @user.save
     end
 
-    redirect_to sessions_path
+    redirect_to tasks_path
   end
-  
+
   def logout
       session.delete(:user_id)
   end

@@ -1,5 +1,7 @@
 class TasksController < ApplicationController
-  before_action :find_student, only: [:show, :edit, :update]
+  before_action :find_task, only: [:show, :edit, :update, :complete]
+  before_action :require_login, except: [:index]
+
   def index
     @tasks = Task.all
   end

@@ -5,13 +5,11 @@
   <title>Shari's To -Do</title>
 </head>
 <header>
-  <h1>Stuff Shari Must Complete</h1>
+
 </header>
 <body>
   <section>
-    <nav>
-      <%= link_to "Log in with GitHub", "/auth/github" %>
-    </nav>
+
     <ul>
       <% @tasks.each do |a|%>
       <h3> <%=link_to("#{a.task_name}", task_path(a), :class => 'task-name' )%> </h3>
@@ -31,20 +29,17 @@
         <%= "#{a.complete_date}"%>
         <%end%>
       </p>
-    <p>
-
-
+      <p>
         <%= link_to "Edit!", edit_task_path(a), method: :get%>
         <%= link_to "Destroy!", task_path(a), method: :delete,
         data: {confirm: "Are you sure?"}%>
         <%= link_to "Complete!", task_complete_path(a), method: :patch%>
-
         <%end%>
-          </p>
-      </ul>
-    </section>
-    <p>
-      <%=link_to"Add More Tasks", new_task_path %>
-    </p>
-  </body>
-  </html>
+      </p>
+    </ul>
+  </section>
+  <p>
+    <%=link_to"Add More Tasks", new_task_path %>
+  </p>
+</body>
+</html>

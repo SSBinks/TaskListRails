@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+  <h1>Shari's Task List</h1>
+  </header>
+  <nav id="nav">
+    <div id="page_nav">
+      <%= "#{login_status }"%>
+      <%= link_to "Log in with Github!", "/auth/github" %>
+    </div>
+  </nav>
   <%= yield %>
 </body>
 </html>

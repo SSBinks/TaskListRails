@@ -7,7 +7,7 @@
 <body>
   <nav id="nav">
     <div id="page_nav">
-      <% if !@user.nil?%>
+      <% if !session[:user_id].nil?%>
       <%= link_to "Sign Out", logout_path, method: :delete %>
       <% else %>
       <%= link_to "Sign In", "/auth/github" %>

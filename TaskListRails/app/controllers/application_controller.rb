@@ -6,11 +6,12 @@ class ApplicationController < ActionController::Base
 
   private
   def user
-      @user ||= User.find(session[:user_id]) if session[:user_id]
+      @user = User.find(session[:user_id]) if session[:user_id]
+      raise
   end
 
   def require_login
-    if current_user.nil?
+    if user.nil?
       flash[:error] = "You must be logged in to perform this action"
       redirect_to tasks_path
     end

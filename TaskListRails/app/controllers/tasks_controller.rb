@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :complete]
   before_action :require_login, except: [:index]
+  before_action :user
 
   def index
     @tasks = @user.tasks

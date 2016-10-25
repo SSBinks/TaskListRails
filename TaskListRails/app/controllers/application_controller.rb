@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   private
   def user
       @user = User.find(session[:user_id]) if session[:user_id]
-      raise
   end
 
   def require_login

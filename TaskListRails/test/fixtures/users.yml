@@ -3,9 +3,24 @@
 # This model initially had no columns defined.  If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+
+joe:
+  name:  Joe Black
+  email:  jblack@hotmail.com
+  uid: 84
+  provider:  github
+joe:
+  name:  Joe Black
+  email:  jblack@hotmail.com
+  uid: 84
+  provider:  github
+moo:
+  name:  Mow Cow
+  email:  cow.moo@yahoo.com
+  uid: 70
+  provider:  github
+kiddo:
+  name:  Kiddo Kinkade
+  email:  kinky@hotmail.com
+  uid: 48
+  provider:  github

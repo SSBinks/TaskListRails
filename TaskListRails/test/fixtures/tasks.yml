@@ -1,13 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  task_name: MyString
-  description: MyString
+work:
+  task_name: Work
+  description: Go to Work
   is_complete: false
   complete_date: 2016-09-28
+  user_id: 84
 
-two:
-  task_name: MyString
-  description: MyString
+eat:
+  task_name: Eat
+  description: Don't eat too much
   is_complete: false
   complete_date: 2016-09-28
+  user_id: 48
+
+vote:
+  task_name: Vote
+  description: Try not to get too depressed
+  is_complete: false
+  complete_date: 2016-09-28
+  user_id: 48
+
+thinky:
+  task_name: Thinky Drinky
+  description: Get it
+  is_complete: false
+  complete_date: 2016-09-28
+  user_id: 70

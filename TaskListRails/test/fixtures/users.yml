@@ -9,6 +9,7 @@ joe:
   email:  jblack@hotmail.com
   uid: 84
   provider:  github
+
 joe:
   name:  Joe Black
   email:  jblack@hotmail.com
@@ -19,6 +20,7 @@ moo:
   email:  cow.moo@yahoo.com
   uid: 70
   provider:  github
+
 kiddo:
   name:  Kiddo Kinkade
   email:  kinky@hotmail.com

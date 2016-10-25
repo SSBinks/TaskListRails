@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :require_login
 
   private
-  def current_user
+  def user
       @user ||= User.find(session[:user_id]) if session[:user_id]
   end
 

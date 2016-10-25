@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'tasks#index'
+  root "sessions#login"
   resources :tasks
   patch 'tasks/:id/complete' => 'tasks#complete', as: 'task_complete'
 

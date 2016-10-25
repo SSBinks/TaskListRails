@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :require_login, except: [:index]
 
   def index
-    @tasks = Task.all
+    @tasks = @user.tasks
   end
 
   def show; end

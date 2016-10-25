@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 
     if @user.nil?
       @user = User.build_from_github(auth_hash)
-  
+
       render :creation_failure unless @user.save
     end
     session[:user_id] = @user.id
@@ -23,8 +23,8 @@ class SessionsController < ApplicationController
   end
 
   def logout
-      session.delete(:user_id)
-      redirect_to root_path
+    session.delete(:user_id)
+    redirect_to root_path
   end
 
 end

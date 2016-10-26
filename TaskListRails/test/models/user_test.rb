@@ -6,6 +6,9 @@ class UserTest < ActiveSupport::TestCase
     assert_not user.valid?
   end
 
+
+
+
   # test "the User will not be valid without an email" do
   #   git_hash = {uid: 15, provider: "github",
   #     info: {nickname: 'kitty'}}

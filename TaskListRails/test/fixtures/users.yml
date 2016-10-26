@@ -5,24 +5,24 @@
 # below each fixture, per the syntax in the comments below
 
 joe:
-  name:  Joe Black
+  nickname:  Joe Black
   email:  jblack@hotmail.com
   uid: 84
   provider:  github
 
 joe:
-  name:  Joe Black
+  nickname:  Joe Black
   email:  jblack@hotmail.com
   uid: 84
   provider:  github
 moo:
-  name:  Mow Cow
+  nickname:  Mow Cow
   email:  cow.moo@yahoo.com
   uid: 70
   provider:  github
 
 kiddo:
-  name:  Kiddo Kinkade
+  nickname:  Kiddo Kinkade
   email:  kinky@hotmail.com
   uid: 48
   provider:  github
